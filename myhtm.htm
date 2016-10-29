@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SVG example</title>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+<style type="text/css">
+	.a
+	{
+		font-size: 4em;
+		fill: green;
+	}
+</style>
+<script type="text/javascript">
+	console.log("Hello javascript");
+	d3.csv("myhtml.csv", function(myArrayOfObjects){
+		myArrayOfObjects.forEach(function (d){
+			console.log(d.x +", "+d.y)
+		});
+	});
+</script>
+</head>
+<body>
+	<svg width="800" height="800">
+		<rect x="50" y="50" width="50" height="50" fill="red"></rect>
+		<rect x="110" y="50" width="50" height="50" fill="green"></rect>
+		<rect x="50" y="110" width="50" height="50" fill="blue"></rect>
+		<rect x="110" y="110" width="50" height="50" fill="yellow"></rect>
+		<line x1="50" y1="200" x2="250" y2="250" stroke="red" stroke-width="20"></line>
+		<line x1="250" y1="250" x2="300" y2="200" stroke="red" stroke-width="20"></line>
+		<line x1="300" y1="200" x2="350" y2="" stroke="red" stroke-width="20"></line>
+		<g transform="translate(200,200)">
+		<path d="M0 200 L50 50 L100 150 L150 100 L200 150" stroke-width="10" fill= "none" stroke="black"></path>
+		<text class="a" x="50" y="50">Hello SVG Text!</text>
+		</g>
+	</svg>
+</body>
+</html>
